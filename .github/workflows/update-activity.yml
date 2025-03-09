@@ -1,0 +1,32 @@
+name: Update GitHub Activity
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # Runs every 6 hours
+  push:
+    branches:
+      - main  # Runs when you push to main
+
+jobs:
+  update-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Fetch latest commits
+        run: |
+          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+               -H "Accept: application/vnd.github.v3+json" \
+               "https://api.github.com/users/YOUR_GITHUB_USERNAME/events" > github-activity.json
+
+      - name: Push to Public Repo
+        run: |
+          git clone https://github.com/YOUR_GITHUB_USERNAME/github-activity.git
+          cd github-activity
+          mv ../github-activity.json .
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "YOUR_GITHUB_USERNAME"
+          git add github-activity.json
+          git commit -m "Updated GitHub activity feed"
+          git push
