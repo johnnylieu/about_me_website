@@ -148,3 +148,32 @@ body {
     transform: scale(1.2);
     filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.5));
 }
+
+/* Fade-in (slide up) keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to the main heading */
+.editor h1 {
+    /* You can adjust the duration, timing, and delay as you like */
+    animation: fadeInUp 1s ease forwards;
+}
+
+.github-activity a,
+.github-activity a:visited {
+  color: #4db8ff;  /* Choose any color you like */
+  text-decoration: none;
+}
+
+.github-activity a:hover {
+  color: #ffffff; /* A hover color for contrast, for example */
+  text-decoration: underline;
+}
