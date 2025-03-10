@@ -37,47 +37,53 @@ async function fetchGitHubActivity() {
         const data = await response.json();
         const activityDiv = document.getElementById("activity");
 
-        // Filter out events from 'johnnylieu/github-activity'
+        // 1) Filter out events from 'johnnylieu/github-activity'
         const filteredEvents = data.filter(
             (event) => event.repo !== "johnnylieu/github-activity"
         );
 
+        // 2) Check if we have any events left
         if (filteredEvents.length === 0) {
             activityDiv.innerHTML =
                 "<p>No recent activity found❣️ What should I build❔ 🤔🧑🏽‍💻</p>";
             return;
         }
 
+        // 3) Render up to the first 5 events
         activityDiv.innerHTML =
             filteredEvents
                 .slice(0, 5)
                 .map((event) => {
-                    // Build the actual GitHub repo link
+                    // Construct the actual GitHub repo link
                     const repoUrl = `https://github.com/${event.repo}`;
+                    // Format the date/time first
+                    const eventTime = new Date(
+                        event.created_at
+                    ).toLocaleString();
+
                     return `
-              <div class="event">
-                <p><strong>${event.type}</strong> in 
-                  <a href="${repoUrl}" target="_blank">${event.repo}</a>
-                </p>
-                <p><small>${new Date(
-                    event.created_at
-                ).toLocaleString()}</small></p>
-              </div>
-            `;
+                    <div class="event">
+                        <p>
+                            <small>${eventTime}</small> - 
+                            <strong>${event.type}</strong> in 
+                            <a href="${repoUrl}" target="_blank">${event.repo}</a>
+                        </p>
+                    </div>
+                `;
                 })
                 .join("") +
+            // 4) Add a small note below the activity list
             `
-          <p class="activity-note">
-            <em>These are the 5 most recent updates from my GitHub in real-time.</em>
-          </p>
-        `;
+            <p class="activity-note">
+              <em>These are the 5 most recent updates from my GitHub, updated in real-time.</em>
+            </p>
+            `;
     } catch (error) {
         document.getElementById("activity").innerHTML =
             "<p>Error loading activity.</p>";
     }
 }
 
-// Make sure fetchGitHubActivity is called
 document.addEventListener("DOMContentLoaded", function () {
     fetchGitHubActivity();
 });
