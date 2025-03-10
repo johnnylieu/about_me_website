@@ -1,121 +1,98 @@
-/* 🌙 Dark Theme */
+/* 🌙 VS Code-Inspired Dark Theme */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Fira Code', monospace; /* Monospace for a coding feel */
     background-color: #1e1e1e;
-    color: #ffffff;
+    color: #d4d4d4;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
 }
 
-/* 🔹 Layout */
+/* 🔹 Sidebar (Mimics VS Code File Explorer) */
+.sidebar {
+    width: 200px;
+    background-color: #252526;
+    padding: 15px;
+    color: #c5c5c5;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.sidebar a {
+    color: #d4d4d4;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.2s ease-in-out;
+}
+
+.sidebar a:hover {
+    background: #333;
+}
+
+/* 🔹 Main Layout (Mimics VS Code Editor) */
 .container {
     display: flex;
-    width: 80%;
+    flex-grow: 1;
     max-width: 1200px;
     margin: auto;
-    gap: 20px; /* Adds space between sections */
 }
 
-/* 🔥 Main Content */
-.main-content {
+/* 🔥 "Editor Window" Styling */
+.editor {
     flex: 2;
+    background: #1e1e1e;
+    border-left: 2px solid #252526;
     padding: 20px;
+    border-radius: 8px;
 }
 
-/* 🟡 GitHub Activity Section (Right Side) */
+/* 🟡 GitHub Activity Section */
 .github-activity {
     flex: 1;
-    max-height: 400px; /* Limits height */
-    overflow-y: auto; /* Enables scrolling if needed */
-    background-color: #2a2a2a;
+    background-color: #252526;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    max-height: 400px;
+    overflow-y: auto;
 }
 
-/* 🟡 GitHub Activity Events */
-.github-activity .event {
-    border-bottom: 1px solid #444;
-    padding: 10px 0;
-}
-
-.github-activity a {
-    color: #4db8ff;
-    text-decoration: none;
-}
-
-.github-activity a:hover {
-    text-decoration: underline;
-}
-
-/* 📱 Responsive Styles */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-}
-
-/* 🔥 Fade-in animation for title */
-h1 {
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* 🔥 Slide-in effect for GitHub Activity */
-.github-activity {
-    animation: slideIn 1s ease-in-out;
-}
-
-/* 🟡 Keyframes for Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-    from { opacity: 0; transform: translateX(50px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-/* Minimal scrollbar for WebKit browsers */
+/* 🎨 Minimal Scrollbar */
 .github-activity::-webkit-scrollbar {
-    width: 6px; /* Thin scrollbar */
-}
-
-.github-activity::-webkit-scrollbar-track {
-    background: transparent; /* Invisible track */
+    width: 6px;
 }
 
 .github-activity::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3); /* Light transparent color */
-    border-radius: 6px; /* Rounded edges */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
 }
 
 .github-activity::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5); /* Slightly more visible on hover */
+    background: rgba(255, 255, 255, 0.5);
 }
 
-/* 🎭 About Me */
-.about-me {
-    font-size: 1.2em;
-    font-weight: 300;
-    margin-bottom: 15px;
-    opacity: 0.9;
-}
-
-/* 🔗 Social Links */
+/* 🎭 Social Links */
 .social-links {
     display: flex;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 12px;
+    margin-bottom: 5px;
+    align-items: center;
 }
 
+/* 🔗 Social Icons */
 .social-links a {
-    color: #ffffff;
-    font-size: 24px;
+    color: #d4d4d4;
+    font-size: 18px;
     transition: transform 0.2s ease-in-out;
 }
 
@@ -124,10 +101,45 @@ h1 {
     color: #4db8ff;
 }
 
+/* 🔥 About Me Section (Typing Animation) */
+.about-me {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-top: 10px;
+    max-width: 800px;
+}
+
+/* 🔥 Blinking Cursor */
+.cursor {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #4db8ff;
+    animation: blink 0.7s infinite;
+    display: inline-block;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* 🎯 Custom Image Icons for LeetCode & Replit */
 .custom-icon {
-    width: 24px;
-    height: 24px;
+    width: 24px; /* Ensures proper sizing */
+    height: 24px; 
+    object-fit: contain; /* Prevents distortion */
     transition: transform 0.2s ease-in-out;
 }
 

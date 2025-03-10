@@ -9,13 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Left: Main Content -->
-        <div class="main-content">
-            <h1>Hello World! I'm Johnny Lieu.</h1>
-            <p class="about-me">Computer Science Student Passionate about Crafting Innovative Software Solutions.</p>
 
-            <!-- Social Links with Icons -->
+    <!-- Sidebar (VS Code File Explorer Style) -->
+    <div class="sidebar">
+        <h3>Explorer</h3>
+        <a href="#">📄 index.html</a>
+        <a href="#">📂 assets/</a>
+        <a href="#">📄 script.js</a>
+        <a href="#">📄 styles.css</a>
+    </div>
+
+    <div class="container">
+        <!-- Left: Main "Editor Window" -->
+        <div class="editor">
+            <h1>Hello World! I'm Johnny Lieu.</h1>
+
+            <!-- Social Links -->
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/johnny-lieu/" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:johnnylieu@yahoo.com"><i class="fas fa-envelope"></i></a>
@@ -27,7 +36,10 @@
                 <a href="https://leetcode.com/u/johnnylieu/" target="_blank">
                     <img src="assets/images/leetcode.png" alt="LeetCode" class="custom-icon">
                 </a>
-            </div>       
+            </div>
+
+            <!-- Typing Animation -->
+            <p class="about-me"><span id="typing-text"></span><span class="cursor"></span></p>
         </div>
 
         <!-- Right: GitHub Activity -->

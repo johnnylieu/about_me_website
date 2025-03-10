@@ -33,4 +33,33 @@ async function fetchGitHubActivity() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const text = [
+        "I'm a computer science student with a passion for building innovative and efficient software solutions.",
+    ];
+
+    const typingContainer = document.getElementById("typing-text");
+    let paragraphIndex = 0;
+    let letterIndex = 0;
+
+    function typeEffect() {
+        if (paragraphIndex < text.length) {
+            let displayedText = text[paragraphIndex].slice(0, letterIndex);
+            typingContainer.innerHTML =
+                displayedText + `<span class="cursor">|</span>`; // Ensures cursor stays at the end
+
+            if (letterIndex < text[paragraphIndex].length) {
+                letterIndex++;
+                setTimeout(typeEffect, 50); // Typing speed
+            } else {
+                letterIndex = 0;
+                paragraphIndex++;
+                setTimeout(typeEffect, 500); // Pause before next paragraph
+            }
+        }
+    }
+
+    typeEffect();
+});
+
 fetchGitHubActivity();
