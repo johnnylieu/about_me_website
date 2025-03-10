@@ -12,21 +12,30 @@ async function fetchGitHubActivity() {
             return;
         }
 
-        activityDiv.innerHTML = data
-            .slice(0, 5)
-            .map(
-                (event) => `
-            <div class="event">
-                <p><strong>${event.type}</strong> in <a href="${
-                    event.url
-                }" target="_blank">${event.repo}</a></p>
-                <p><small>${new Date(
-                    event.created_at
-                ).toLocaleString()}</small></p>
-            </div>
-        `
-            )
-            .join("");
+        activityDiv.innerHTML =
+            data
+                .slice(0, 5)
+                .map(
+                    (event) => `
+                    <div class="event">
+                        <p><strong>${event.type}</strong> in 
+                            <a href="${event.url}" target="_blank">${
+                        event.repo
+                    }</a>
+                        </p>
+                        <p><small>${new Date(
+                            event.created_at
+                        ).toLocaleString()}</small></p>
+                    </div>
+                `
+                )
+                .join("") +
+            // Add a short note below the activity
+            `
+            <p class="activity-note">
+            These are the 5 most recent updates from my GitHub, updated in real-time.
+            </p>
+            `;
     } catch (error) {
         document.getElementById("activity").innerHTML =
             "<p>Error loading activity.</p>";

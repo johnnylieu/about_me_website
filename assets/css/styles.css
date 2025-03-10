@@ -63,8 +63,10 @@ body {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    max-height: 400px;
-    overflow-y: auto;
+    /* Remove or comment out these lines if you don't want scrolling:
+       max-height: 400px;
+       overflow-y: auto;
+    */
 }
 
 /* 🎨 Minimal Scrollbar */
@@ -236,4 +238,11 @@ body {
 
 .contact-form button:hover {
     background-color: #70ccff; /* Lighter hover effect */
+}
+
+.activity-note {
+    color: #999;       /* Lighter color than main text */
+    font-size: 0.85rem;
+    margin-top: 10px;  /* Space above the note */
+    line-height: 1.4;
 }
