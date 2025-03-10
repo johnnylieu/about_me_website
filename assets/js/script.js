@@ -75,7 +75,7 @@ async function fetchGitHubActivity() {
             // 4) Add a small note below the activity list
             `
             <p class="activity-note">
-              <em>These are the 5 most recent updates from my <a href="https://github.com/johnnylieu">GitHub</a>, updated in real-time.</em>
+              <em>These are the 5 most recent updates from my <a href="https://github.com/johnnylieu">GitHub</a> in real-time.</em>
             </p>
             `;
     } catch (error) {
