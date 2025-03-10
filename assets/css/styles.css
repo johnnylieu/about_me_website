@@ -1,19 +1,70 @@
+/* 🌙 Dark Theme */
 body {
     font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 🔹 Layout */
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px; /* Adds space between sections */
+}
+
+/* 🔥 Main Content */
+.main-content {
+    flex: 2;
     padding: 20px;
 }
 
-#activity {
-    max-width: 600px;
-    margin-top: 20px;
+/* 🟡 GitHub Activity Styling (Right Side) */
+.github-activity {
+    flex: 1;
+    max-height: 400px; /* Limits height */
+    overflow-y: auto; /* Scrollbar if needed */
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.event {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+/* 🔥 Animations */
+h1 {
+    animation: fadeIn 1s ease-in-out;
 }
 
-.event a {
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🟡 GitHub Activity Events */
+.github-activity .event {
+    border-bottom: 1px solid #444;
+    padding: 10px 0;
+}
+
+.github-activity a {
+    color: #4db8ff;
     text-decoration: none;
-    color: blue;
+}
+
+.github-activity a:hover {
+    text-decoration: underline;
+}
+
+/* 📱 Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
 }
