@@ -1,6 +1,7 @@
 name: Update GitHub Activity
 
 on:
+  workflow_dispatch:  # Allows manual trigger
   schedule:
     - cron: "0 */6 * * *"  # Runs every 6 hours
   push:
