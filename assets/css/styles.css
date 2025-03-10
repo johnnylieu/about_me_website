@@ -288,3 +288,63 @@ body {
   .container {
     padding: 10px; /* or add top/bottom padding for breathing room */
   }
+
+  /* Mobile Optimization */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* Adjust Sidebar */
+    .explorer {
+        width: 100%; /* Full width on mobile */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Make Content Full Width */
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    /* Stack Sections Vertically */
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* GitHub Activity Section */
+    #activity {
+        overflow-x: auto; /* Prevents text from being cut off */
+        word-wrap: break-word;
+        padding: 10px;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 12px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+}
