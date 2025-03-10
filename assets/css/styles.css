@@ -163,25 +163,24 @@ body {
 
 /* Apply the animation to the main heading */
 .editor h1 {
-    /* You can adjust the duration, timing, and delay as you like */
     animation: fadeInUp 1s ease forwards;
 }
 
 .github-activity a,
 .github-activity a:visited {
-  color: #4db8ff;  /* Choose any color you like */
+  color: #4db8ff; 
   text-decoration: none;
 }
 
 .github-activity a:hover {
-  color: #ffffff; /* A hover color for contrast, for example */
+  color: #ffffff; 
   text-decoration: underline;
 }
 
 /* Fade transition for page container */
 .fade-transition {
-    opacity: 0;                 /* Start invisible */
-    transition: opacity 0.5s ease-in-out;  /* Smooth fade over 0.5s */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; 
 }
 
 /* When the page has loaded, add .loaded to fade in */
@@ -205,7 +204,6 @@ body {
 
 .contact-form label {
     font-weight: bold;
-    /* You could add margin-bottom here if you want more space above inputs */
 }
 
 .contact-form input,
@@ -213,9 +211,9 @@ body {
     width: 100%;
     padding: 8px;
     box-sizing: border-box; /* Ensures padding is included in total width */
-    background-color: #2e2e2e; /* Matches your dark theme, optional */
-    color: #d4d4d4;           /* Text color to match dark theme */
-    border: 1px solid #444;   /* Subtle border to fit the dark theme */
+    background-color: #2e2e2e;
+    color: #d4d4d4;           
+    border: 1px solid #444; 
     border-radius: 4px;
 }
 
