@@ -23,10 +23,10 @@ jobs:
 
       - name: Push to Public Repo
         run: |
-          git clone https://github.com/YOUR_GITHUB_USERNAME/github-activity.git
+          git clone https://johnnylieu:${{ secrets.GH_ACTIVITY_TOKEN }}@github.com/johnnylieu/github-activity.git
           cd github-activity
           mv ../github-activity.json .
-          git config --global user.email "johnnylieu@yahoo.com"
+          git config --global user.email "johnnylieu@users.noreply.github.com"
           git config --global user.name "johnnylieu"
           git add github-activity.json
           git commit -m "Updated GitHub activity feed"
