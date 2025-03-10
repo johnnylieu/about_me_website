@@ -89,3 +89,5 @@ async function fetchGitHubActivity() {
 document.addEventListener("DOMContentLoaded", function () {
     fetchGitHubActivity();
 });
+
+// test
