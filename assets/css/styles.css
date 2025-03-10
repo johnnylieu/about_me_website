@@ -305,9 +305,8 @@ body {
 
     /* Make Content Full Width */
     .container {
-        width: 100%;
-        padding: 10px;
-    }
+        flex-direction: column;
+      }
 
     /* Stack Sections Vertically */
     .content {
@@ -346,5 +345,15 @@ body {
         color: white;
         border: none;
         cursor: pointer;
+    }
+
+    .sidebar {
+        display: none;
+      }
+
+    .editor, 
+    .github-activity {
+        width: 100%;
+        margin-bottom: 20px; /* spacing between sections */
     }
 }
