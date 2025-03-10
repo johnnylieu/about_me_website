@@ -19,7 +19,9 @@ jobs:
         run: |
           curl -H "Authorization: token ${{ secrets.GH_ACTIVITY_TOKEN }}" \
                -H "Accept: application/vnd.github.v3+json" \
-               "https://api.github.com/users/johnnylieu/events?per_page=20" | jq '[.[] | {type, repo: .repo.name, created_at, url: .repo.url}]' > github-activity.json
+               "https://api.github.com/users/johnnylieu/events?per_page=20" \
+          | jq '[.[] | {type, repo: .repo.name, created_at, url: .repo.url}]' \
+          > github-activity.json
 
       - name: Push to Public Repo
         run: |
@@ -29,5 +31,11 @@ jobs:
           git config --global user.email "johnnylieu@users.noreply.github.com"
           git config --global user.name "johnnylieu"
           git add github-activity.json
-          git commit -m "Updated GitHub activity feed"
-          git push
+
+          # Only commit/push if there are changes
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "Updated GitHub activity feed"
+            git push
+          else
+            echo "No changes to commit"
+          fi
