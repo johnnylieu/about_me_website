@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Contact | Johnny Lieu"/>
+    <title>Contact | Johnny Lieu</title>
+    <!-- Reuse your existing CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Explorer</h3>
+        <a href="index.html">📄 index.html</a>
+        <a href="contact.html">📩 contact.html</a>
+    </div>
+
+    <!-- Container with a "fade-transition" class for smooth navigation -->
+    <div class="container fade-transition">
+        <div class="editor">
+            <h1>Contact Me</h1>
+
+            <form 
+            action="mailto:johnnylieu@yahoo.com"
+            method="POST"
+            enctype="text/plain"
+            class="contact-form"
+            >
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+            </form>
+
+        </div>
+    </div>
+    <script src="assets/js/navigation.js"></script>
+</body>
+</html>
