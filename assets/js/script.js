@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 2) GITHUB ACTIVITY
-// 2) GITHUB ACTIVITY
 async function fetchGitHubActivity() {
     try {
         const response = await fetch(
