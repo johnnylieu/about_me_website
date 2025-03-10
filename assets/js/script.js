@@ -68,7 +68,7 @@ async function fetchGitHubActivity() {
                 .join("") +
             `
           <p class="activity-note">
-            <em>These are the 5 most recent updates from my GitHub, updated in real-time.</em>
+            <em>These are the 5 most recent updates from my GitHub in real-time.</em>
           </p>
         `;
     } catch (error) {
