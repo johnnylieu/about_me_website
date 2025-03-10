@@ -26,25 +26,15 @@ body {
     padding: 20px;
 }
 
-/* 🟡 GitHub Activity Styling (Right Side) */
+/* 🟡 GitHub Activity Section (Right Side) */
 .github-activity {
     flex: 1;
     max-height: 400px; /* Limits height */
-    overflow-y: auto; /* Scrollbar if needed */
+    overflow-y: auto; /* Enables scrolling if needed */
     background-color: #2a2a2a;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-/* 🔥 Animations */
-h1 {
-    animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* 🟡 GitHub Activity Events */
@@ -67,4 +57,82 @@ h1 {
     .container {
         flex-direction: column;
     }
+}
+
+/* 🔥 Fade-in animation for title */
+h1 {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 🔥 Slide-in effect for GitHub Activity */
+.github-activity {
+    animation: slideIn 1s ease-in-out;
+}
+
+/* 🟡 Keyframes for Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Minimal scrollbar for WebKit browsers */
+.github-activity::-webkit-scrollbar {
+    width: 6px; /* Thin scrollbar */
+}
+
+.github-activity::-webkit-scrollbar-track {
+    background: transparent; /* Invisible track */
+}
+
+.github-activity::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); /* Light transparent color */
+    border-radius: 6px; /* Rounded edges */
+}
+
+.github-activity::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Slightly more visible on hover */
+}
+
+/* 🎭 About Me */
+.about-me {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+/* 🔗 Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+    color: #4db8ff;
+}
+
+/* 🎯 Custom Image Icons for LeetCode & Replit */
+.custom-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* 🔥 Hover Effect (Same as Other Icons) */
+.custom-icon:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.5));
 }
