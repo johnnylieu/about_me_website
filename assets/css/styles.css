@@ -193,3 +193,49 @@ body {
 .fade-transition.fade-out {
     opacity: 0;
 }
+
+/* Contact Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    max-width: 400px;       /* Limit form width if desired */
+    margin-top: 20px;       /* Spacing from top */
+    gap: 10px;              /* Space between elements */
+}
+
+.contact-form label {
+    font-weight: bold;
+    /* You could add margin-bottom here if you want more space above inputs */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box; /* Ensures padding is included in total width */
+    background-color: #2e2e2e; /* Matches your dark theme, optional */
+    color: #d4d4d4;           /* Text color to match dark theme */
+    border: 1px solid #444;   /* Subtle border to fit the dark theme */
+    border-radius: 4px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #4db8ff;    /* Highlight color when focused */
+}
+
+.contact-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4db8ff; /* Button color */
+    color: #1e1e1e;            /* Contrast text color */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #70ccff; /* Lighter hover effect */
+}
