@@ -127,15 +127,44 @@ body {
 
 /* 📱 Responsive Design */
 @media (max-width: 768px) {
+    /* Stack everything vertically */
     .container {
-        flex-direction: column;
+      flex-direction: column;
+      margin: 0; /* Remove any large side margins if needed */
     }
-
+  
+    /* Make the sidebar full-width on mobile */
     .sidebar {
-        width: 100%;
-        text-align: center;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px; /* Space between sidebar and main content */
     }
-}
+  
+    /* Center or left-align sidebar text if desired */
+    .sidebar h3 {
+      text-align: left;
+      padding-left: 15px; 
+    }
+  
+    .sidebar a {
+      display: block;
+      margin: 5px 0;
+    }
+  
+    /* Make sure the "editor" or main content is also full-width */
+    .editor,
+    .github-activity {
+      width: 100%;
+      max-width: 100%; 
+      margin: 0;
+    }
+  
+    /* Adjust your contact form to be full width */
+    .contact-form {
+      width: 100%;
+      max-width: 100%;
+    }
+  }  
 
 /* 🎯 Custom Image Icons for LeetCode & Replit */
 .custom-icon {
@@ -246,3 +275,16 @@ body {
     margin-top: 10px;  /* Space above the note */
     line-height: 1.4;
 }
+
+body {
+    overflow-x: hidden; /* Prevent horizontal overflow if needed */
+  }
+  
+  img, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .container {
+    padding: 10px; /* or add top/bottom padding for breathing room */
+  }
