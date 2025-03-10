@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 2) GITHUB ACTIVITY
+// 2) GITHUB ACTIVITY
 async function fetchGitHubActivity() {
     try {
         const response = await fetch(
@@ -37,45 +38,46 @@ async function fetchGitHubActivity() {
         const data = await response.json();
         const activityDiv = document.getElementById("activity");
 
-        // 1) Filter out events from 'johnnylieu/github-activity'
+        // 1) Sort by date descending (newest first)
+        data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+        // 2) Filter out events from 'johnnylieu/github-activity'
         const filteredEvents = data.filter(
             (event) => event.repo !== "johnnylieu/github-activity"
         );
 
-        // 2) Check if we have any events left
+        // 3) Check if we have any events left
         if (filteredEvents.length === 0) {
             activityDiv.innerHTML =
                 "<p>No recent activity found❣️ What should I build❔ 🤔🧑🏽‍💻</p>";
             return;
         }
 
-        // 3) Render up to the first 5 events
+        // 4) Render up to the first 5 events (now actually the newest 5)
         activityDiv.innerHTML =
             filteredEvents
                 .slice(0, 5)
                 .map((event) => {
-                    // Construct the actual GitHub repo link
                     const repoUrl = `https://github.com/${event.repo}`;
-                    // Format the date/time first
                     const eventTime = new Date(
                         event.created_at
                     ).toLocaleString();
 
                     return `
-                    <div class="event">
-                        <p>
-                            <small>${eventTime}</small> - 
-                            <strong>${event.type}</strong> in 
-                            <a href="${repoUrl}" target="_blank">${event.repo}</a>
-                        </p>
-                    </div>
-                `;
+                        <div class="event">
+                            <p>
+                                <small>${eventTime}</small> - 
+                                <strong>${event.type}</strong> in 
+                                <a href="${repoUrl}" target="_blank">${event.repo}</a>
+                            </p>
+                        </div>
+                    `;
                 })
                 .join("") +
-            // 4) Add a small note below the activity list
             `
             <p class="activity-note">
-              <em>These are the 5 most recent updates from my <a href="https://github.com/johnnylieu">GitHub</a> in real-time.</em>
+              <em>These are the 5 most recent updates from my 
+                  <a href="https://github.com/johnnylieu">GitHub</a> in real-time.</em>
             </p>
             `;
     } catch (error) {
@@ -87,3 +89,5 @@ async function fetchGitHubActivity() {
 document.addEventListener("DOMContentLoaded", function () {
     fetchGitHubActivity();
 });
+
+// test
