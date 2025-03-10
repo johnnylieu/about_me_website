@@ -177,3 +177,19 @@ body {
   color: #ffffff; /* A hover color for contrast, for example */
   text-decoration: underline;
 }
+
+/* Fade transition for page container */
+.fade-transition {
+    opacity: 0;                 /* Start invisible */
+    transition: opacity 0.5s ease-in-out;  /* Smooth fade over 0.5s */
+}
+
+/* When the page has loaded, add .loaded to fade in */
+.fade-transition.loaded {
+    opacity: 1;
+}
+
+/* Optional fade-out class */
+.fade-transition.fade-out {
+    opacity: 0;
+}
