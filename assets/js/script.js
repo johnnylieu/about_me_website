@@ -76,7 +76,7 @@ async function fetchGitHubActivity() {
             `
             <p class="activity-note">
               <em>These are the 5 most recent updates from my 
-                  <a href="https://github.com/johnnylieu">GitHub</a> in real-time.</em>
+                  <a href="https://github.com/johnnylieu">GitHub</a>.</em>
             </p>
             `;
     } catch (error) {
