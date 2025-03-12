@@ -358,23 +358,18 @@ body {
     }
 }
 
-@keyframes fadeInUp {
+@keyframes rotateIn {
     0% {
       opacity: 0;
-      transform: translateY(20px);
+      transform: rotate(-45deg) scale(0.8);
     }
     100% {
       opacity: 1;
-      transform: translateY(0);
+      transform: rotate(0deg) scale(1);
     }
   }
   
-  /* Animate the .github-activity container */
   .github-activity {
-    /* Ensure it's initially invisible until the animation starts */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards;
-    /* "forwards" ensures the final state (opacity:1, translateY(0)) is retained */
+    animation: rotateIn 1.7s ease forwards;
   }
   
