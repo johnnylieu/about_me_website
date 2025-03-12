@@ -357,3 +357,24 @@ body {
         margin-bottom: 20px; /* spacing between sections */
     }
 }
+
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Animate the .github-activity container */
+  .github-activity {
+    /* Ensure it's initially invisible until the animation starts */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    /* "forwards" ensures the final state (opacity:1, translateY(0)) is retained */
+  }
+  
