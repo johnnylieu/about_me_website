@@ -1,4 +1,3 @@
-// navigation.js
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Fade in the page
     const container = document.querySelector(".fade-transition");

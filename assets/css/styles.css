@@ -186,7 +186,7 @@ body {
        ease-in-out = easing function
        3 = number of total repeats
     */
-    animation: intermittentShake 5s ease-in-out 3;
+    animation: intermittentShake 5s ease-in-out infinite;
 }
 
 /* Fade-in (slide up) keyframes */

@@ -1,5 +1,3 @@
-// script.js
-
 // 1) TYPING EFFECT
 document.addEventListener("DOMContentLoaded", function () {
     const text = [
