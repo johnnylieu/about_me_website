@@ -46,7 +46,7 @@ async function fetchGitHubActivity() {
         // 3) Check if we have any events left
         if (filteredEvents.length === 0) {
             activityDiv.innerHTML =
-                "<p>No recent activity found❣️ What should I build❔ 🤔🧑🏽‍💻</p>";
+                "<p>No recent activity found. What should I build❔ 🤔🧑🏽‍💻</p>";
             return;
         }
 
