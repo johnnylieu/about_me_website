@@ -39,7 +39,9 @@ async function fetchGitHubActivity() {
         data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
         // 2) Use all events (or change this filter to whatever you want)
-        const filteredEvents = data;
+        const filteredEvents = data.filter(
+            (event) => event.repo !== "johnnylieu/github-activity"
+        );
 
         // 3) Check if we have any events left
         if (filteredEvents.length === 0) {
