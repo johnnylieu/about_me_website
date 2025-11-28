@@ -71,7 +71,7 @@ async function fetchGitHubActivity() {
                 .join("") +
             `
             <p class="activity-note">
-              <em>These are the 5 most recent updates from my 
+              <em>These are the most recent updates from my 
                   <a href="https://github.com/johnnylieu">GitHub</a>.</em>
             </p>
             `;
