@@ -184,9 +184,9 @@ body {
     /* 
        5s = each animation cycle duration
        ease-in-out = easing function
-       3 = number of total repeats
+       infinite = repeats indefinitely
     */
-    animation: intermittentShake 5s ease-in-out 111;
+    animation: intermittentShake 4s ease-in-out infinite;
 }
 
 /* Fade-in (slide up) keyframes */
