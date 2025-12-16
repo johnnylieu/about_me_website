@@ -1,7 +1,7 @@
 // 1) TYPING EFFECT
 document.addEventListener("DOMContentLoaded", function () {
     const text = [
-        "I'm a computer science student with a passion for building innovative and efficient software solutions.",
+        "I'm a computer science professional with a passion for building innovative and efficient software solutions.",
     ];
     const typingContainer = document.getElementById("typing-text");
     let paragraphIndex = 0;
