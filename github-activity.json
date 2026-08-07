@@ -1,20 +1,20 @@
 [
   {
     "type": "PushEvent",
-    "repo": "johnnylieu/about_me_website",
+    "repo": "johnnylieu/ai-rag-slackbot",
     "created_at": "2026-08-07T17:15:33Z",
-    "url": "https://api.github.com/repos/johnnylieu/about_me_website"
+    "url": "https://github.com/johnnylieu/ai-rag-slackbot"
   },
   {
     "type": "PushEvent",
-    "repo": "johnnylieu/about_me_website",
+    "repo": "johnnylieu/ai-rag-slackbot",
     "created_at": "2026-08-07T17:07:31Z",
-    "url": "https://api.github.com/repos/johnnylieu/about_me_website"
+    "url": "https://github.com/johnnylieu/ai-rag-slackbot"
   },
   {
     "type": "PushEvent",
-    "repo": "johnnylieu/about_me_website",
+    "repo": "johnnylieu/ai-rag-slackbot",
     "created_at": "2026-08-07T16:55:51Z",
-    "url": "https://api.github.com/repos/johnnylieu/about_me_website"
+    "url": "https://github.com/johnnylieu/ai-rag-slackbot"
   }
 ]
