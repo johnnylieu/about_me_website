@@ -1,11 +1,11 @@
 name: Update GitHub Activity
 on:
-  workflow_dispatch:  # Allows manual trigger
+  workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"  # Runs every 6 hours
+    - cron: "0 */6 * * *"
   push:
     branches:
-      - main  # Runs when you push to main
+      - main
 jobs:
   update-feed:
     runs-on: ubuntu-latest
@@ -46,6 +46,7 @@ jobs:
           git add github-activity.json
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Updated GitHub activity feed"
+            git pull --rebase origin main
             git push
           else
             echo "No changes to commit"
