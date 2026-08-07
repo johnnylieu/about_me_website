@@ -40,6 +40,7 @@ jobs:
         run: |
           git config --global user.email "johnnylieu@users.noreply.github.com"
           git config --global user.name "johnnylieu"
+          git remote set-url origin https://johnnylieu:${{ secrets.GH_ACTIVITY_TOKEN }}@github.com/johnnylieu/about_me_website.git
           git add github-activity.json
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Updated GitHub activity feed"
