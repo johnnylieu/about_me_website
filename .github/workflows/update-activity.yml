@@ -19,8 +19,8 @@ jobs:
         run: |
           curl -H "Authorization: token ${{ secrets.GH_ACTIVITY_TOKEN }}" \
                -H "Accept: application/vnd.github.v3+json" \
-               "https://api.github.com/users/johnnylieu/events?per_page=20" \
-          | jq '[.[] | {type, repo: .repo.name, created_at, url: .repo.url}]' \
+               "https://api.github.com/users/johnnylieu/events?per_page=30" \
+          | jq '[.[] | select(.repo.name != "johnnylieu/about_me_website" and .repo.name != "johnnylieu/github-activity") | {type, repo: .repo.name, created_at, url: .repo.url}]' \
           > github-activity.json
 
       - name: Push to Public Repo
