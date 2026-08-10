@@ -3,9 +3,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 */6 * * *"
-  push:
-    branches:
-      - main
 jobs:
   update-feed:
     runs-on: ubuntu-latest
@@ -48,7 +45,7 @@ jobs:
           git add github-activity.json
           if [ -n "$(git status --porcelain -- github-activity.json)" ]; then
             git commit -m "Updated GitHub activity feed"
-            git pull --rebase origin main
+            git pull --rebase -X theirs origin main
             git push
           else
             echo "No changes to commit"
