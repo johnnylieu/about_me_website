@@ -111,6 +111,27 @@ body {
     max-width: 800px;
 }
 
+.code-block {
+    margin-top: 10px;
+    padding: 15px 20px;
+    background-color: #1e1e1e;
+    border-left: 3px solid #4db8ff;
+    border-radius: 4px;
+}
+
+.code-block .about-me {
+    margin: 0;
+    line-height: 1.6em;
+}
+
+.code-keyword {
+    color: #c586c0; /* purple, like "const", "return" in VS Code */
+}
+
+.code-string {
+    color: #ce9178; /* orange/tan, like string literals in VS Code */
+}
+
 /* 🔥 Blinking Cursor */
 .cursor {
     font-weight: bold;
