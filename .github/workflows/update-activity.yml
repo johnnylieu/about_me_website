@@ -34,19 +34,3 @@ jobs:
           else
             echo "No changes to commit"
           fi
-          cd ..
-          rm -rf github-activity
-
-      - name: Commit activity file to this repo
-        run: |
-          git config --global user.email "johnnylieu@users.noreply.github.com"
-          git config --global user.name "johnnylieu"
-          git remote set-url origin https://johnnylieu:${{ secrets.GH_ACTIVITY_TOKEN }}@github.com/johnnylieu/about_me_website.git
-          git add github-activity.json
-          if [ -n "$(git status --porcelain -- github-activity.json)" ]; then
-            git commit -m "Updated GitHub activity feed"
-            git pull --rebase -X theirs origin main
-            git push
-          else
-            echo "No changes to commit"
-          fi
