@@ -364,8 +364,32 @@ iframe {
 
     .editor,
     .github-activity {
-        width: 100%;
-        margin-bottom: 20px; /* spacing between sections */
+        padding: 15px;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
+    .editor h1 {
+        font-size: 1.6em;
+        line-height: 1.3;
+    }
+
+    .about-me {
+        font-size: 1em;
+    }
+
+    .sidebar {
+        gap: 4px;
+        padding: 15px 10px;
+    }
+
+    .sidebar a {
+        padding: 8px 10px;
+    }
+
+    .container {
+        padding: 0;
     }
 }
 
