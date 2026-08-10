@@ -1,6 +1,6 @@
 /* 🌙 VS Code-Inspired Dark Theme */
 body {
-    font-family: 'Fira Code', monospace; /* Monospace for a coding feel */
+    font-family: "Fira Code", monospace; /* Monospace for a coding feel */
     background-color: #1e1e1e;
     color: #d4d4d4;
     margin: 0;
@@ -122,54 +122,56 @@ body {
 }
 
 @keyframes blink {
-    50% { opacity: 0; }
+    50% {
+        opacity: 0;
+    }
 }
 
 /* 📱 Responsive Design */
 @media (max-width: 768px) {
     /* Stack everything vertically */
     .container {
-      flex-direction: column;
-      margin: 0; /* Remove any large side margins if needed */
+        flex-direction: column;
+        margin: 0; /* Remove any large side margins if needed */
     }
-  
+
     /* Make the sidebar full-width on mobile */
     .sidebar {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px; /* Space between sidebar and main content */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px; /* Space between sidebar and main content */
     }
-  
+
     /* Center or left-align sidebar text if desired */
     .sidebar h3 {
-      text-align: left;
-      padding-left: 15px; 
+        text-align: left;
+        padding-left: 15px;
     }
-  
+
     .sidebar a {
-      display: block;
-      margin: 5px 0;
+        display: block;
+        margin: 5px 0;
     }
-  
+
     /* Make sure the "editor" or main content is also full-width */
     .editor,
     .github-activity {
-      width: 100%;
-      max-width: 100%; 
-      margin: 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
-  
+
     /* Adjust your contact form to be full width */
     .contact-form {
-      width: 100%;
-      max-width: 100%;
+        width: 100%;
+        max-width: 100%;
     }
-  }  
+}
 
 /* 🎯 Custom Image Icons for LeetCode & Replit */
 .custom-icon {
     width: 24px; /* Ensures proper sizing */
-    height: 24px; 
+    height: 24px;
     object-fit: contain; /* Prevents distortion */
     transition: transform 0.2s ease-in-out;
 }
@@ -208,19 +210,19 @@ body {
 
 .github-activity a,
 .github-activity a:visited {
-  color: #4db8ff; 
-  text-decoration: none;
+    color: #4db8ff;
+    text-decoration: none;
 }
 
 .github-activity a:hover {
-  color: #ffffff; 
-  text-decoration: underline;
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 /* Fade transition for page container */
 .fade-transition {
     opacity: 0;
-    transition: opacity 0.5s ease-in-out; 
+    transition: opacity 0.5s ease-in-out;
 }
 
 /* When the page has loaded, add .loaded to fade in */
@@ -237,9 +239,9 @@ body {
 .contact-form {
     display: flex;
     flex-direction: column; /* Stack items vertically */
-    max-width: 400px;       /* Limit form width if desired */
-    margin-top: 20px;       /* Spacing from top */
-    gap: 10px;              /* Space between elements */
+    max-width: 400px; /* Limit form width if desired */
+    margin-top: 20px; /* Spacing from top */
+    gap: 10px; /* Space between elements */
 }
 
 .contact-form label {
@@ -252,15 +254,15 @@ body {
     padding: 8px;
     box-sizing: border-box; /* Ensures padding is included in total width */
     background-color: #2e2e2e;
-    color: #d4d4d4;           
-    border: 1px solid #444; 
+    color: #d4d4d4;
+    border: 1px solid #444;
     border-radius: 4px;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #4db8ff;    /* Highlight color when focused */
+    border-color: #4db8ff; /* Highlight color when focused */
 }
 
 .contact-form button {
@@ -268,7 +270,7 @@ body {
     border: none;
     border-radius: 4px;
     background-color: #4db8ff; /* Button color */
-    color: #1e1e1e;            /* Contrast text color */
+    color: #1e1e1e; /* Contrast text color */
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
@@ -279,26 +281,27 @@ body {
 }
 
 .activity-note {
-    color: #999;       /* Lighter color than main text */
+    color: #999; /* Lighter color than main text */
     font-size: 0.85rem;
-    margin-top: 10px;  /* Space above the note */
+    margin-top: 10px; /* Space above the note */
     line-height: 1.4;
 }
 
 body {
     overflow-x: hidden; /* Prevent horizontal overflow if needed */
-  }
-  
-  img, iframe {
+}
+
+img,
+iframe {
     max-width: 100%;
     height: auto;
-  }
-  
-  .container {
-    padding: 10px; /* or add top/bottom padding for breathing room */
-  }
+}
 
-  /* Mobile Optimization */
+.container {
+    padding: 10px; /* or add top/bottom padding for breathing room */
+}
+
+/* Mobile Optimization */
 @media screen and (max-width: 768px) {
     body {
         font-size: 16px;
@@ -315,7 +318,7 @@ body {
     /* Make Content Full Width */
     .container {
         flex-direction: column;
-      }
+    }
 
     /* Stack Sections Vertically */
     .content {
@@ -356,11 +359,7 @@ body {
         cursor: pointer;
     }
 
-    .sidebar {
-        display: none;
-      }
-
-    .editor, 
+    .editor,
     .github-activity {
         width: 100%;
         margin-bottom: 20px; /* spacing between sections */
@@ -369,38 +368,37 @@ body {
 
 @keyframes rotateIn {
     0% {
-      opacity: 0;
-      transform: rotate(-45deg) scale(0.8);
+        opacity: 0;
+        transform: rotate(-45deg) scale(0.8);
     }
     100% {
-      opacity: 1;
-      transform: rotate(0deg) scale(1);
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
     }
-  }
-  
-  .github-activity {
+}
+
+.github-activity {
     animation: rotateIn 1.7s ease forwards;
-  }
-  
-  @keyframes intermittentShake {
+}
+
+@keyframes intermittentShake {
     0%,
     90% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
     92% {
-      transform: translateX(-4px);
+        transform: translateX(-4px);
     }
     94% {
-      transform: translateX(4px);
+        transform: translateX(4px);
     }
     96% {
-      transform: translateX(-4px);
+        transform: translateX(-4px);
     }
     98% {
-      transform: translateX(4px);
+        transform: translateX(4px);
     }
     100% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
-  }
-  
+}
