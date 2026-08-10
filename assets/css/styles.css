@@ -129,6 +129,9 @@ body {
 
 /* 📱 Responsive Design */
 @media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
     /* Stack everything vertically */
     .container {
         flex-direction: column;
