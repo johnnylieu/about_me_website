@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 async function fetchGitHubActivity() {
     try {
         const response = await fetch(
-            "https://raw.githubusercontent.com/johnnylieu/github-activity/main/github-activity.json"
+            `https://raw.githubusercontent.com/johnnylieu/github-activity/main/github-activity.json?t=${Date.now()}`,
         );
         const data = await response.json();
         const activityDiv = document.getElementById("activity");
@@ -40,7 +40,7 @@ async function fetchGitHubActivity() {
 
         // 2) Use all events (or change this filter to whatever you want)
         const filteredEvents = data.filter(
-            (event) => event.repo !== "johnnylieu/github-activity"
+            (event) => event.repo !== "johnnylieu/github-activity",
         );
 
         // 3) Check if we have any events left
@@ -57,7 +57,7 @@ async function fetchGitHubActivity() {
                 .map((event) => {
                     const repoUrl = `https://github.com/${event.repo}`;
                     const eventTime = new Date(
-                        event.created_at
+                        event.created_at,
                     ).toLocaleString();
 
                     return `
